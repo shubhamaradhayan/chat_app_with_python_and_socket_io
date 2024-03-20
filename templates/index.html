@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block data %}
+<div class="container my-4 m-auto text-center">
+    <form class="card my-4 mx-4 text-center" action="/chat">
+        <div class="row g-3 align-items-center my-4 text-center">
+            <div class="col-auto text-center px-auto">
+                <label for="inputPassword6" class="col-form-label">Enter Your Name</label>
+            </div>
+            <div class="col-auto text-center">
+                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+            </div>
+            
+        </div>
+        <br>
+        <div class="row g-3 align-items-center my-4">
+            <button type="submit">Create Room</button>
+        </div>
+        <br>
+        <h5>OR</h5>
+        <br>
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Enter Room Id</label>
+            </div>
+            <div class="col-auto">
+                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
+            </div>
+            <div class="col-auto">
+                <button type="submit">Join Room</button>
+                <!-- <span id="passwordHelpInline" class="form-text"> </span> -->
+            </div>
+           
+        </div>
+    </form>
+</div>
+
+{% endblock %}

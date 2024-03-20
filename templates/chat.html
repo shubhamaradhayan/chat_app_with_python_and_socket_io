@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block data %}
+  <div class="container ">
+    <p class="my-2"><b>Room Id. : </b>{{room_id}}</p>
+    <hr>
+    <p><b>Hello , {{user_name}}</b></p>
+    <hr>
+    <!-- <p>notification</p>
+    <hr> -->
+
+    <div class="card" style="overflow: auto; padding: 10px; height: 600px;">
+
+      <p><b>user : </b>hello user </p>
+
+    </div>
+
+    <div class="container input-group mb-3 fixed-bottom " style=" padding-bottom: 30px;">
+      <input type="text" class="form-control" placeholder="Typing........." aria-label="Recipient's username" aria-describedby="button-addon2" style="border: 2px solid black;">
+      <button class="btn btn-outline-secondary text-dark" type="button"  id="button-addon2" style="border: 2px solid black;">Send</button>
+    </div>
+    
+
+
+  </div>
+
+
+{% endblock %} 
