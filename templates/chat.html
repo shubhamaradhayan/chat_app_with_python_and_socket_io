@@ -2,16 +2,16 @@
 
 {% block data %}
   <div class="container ">
-    <p class="my-2"><b>Room Id. : </b>{{room_id}}</p>
+    <p class="my-2"><b>Room Id. : </b><i id="room_id" class="">{{room_id}}</i> <button class="btn btn-primary btn-sm float-left mx-4 px-4" id="copy_button" onclick="copyToClipboard()">copy</button></p>
     <hr>
-    <p><b>Hello , {{user_name}}</b></p>
+    <p><b>Hello , </b> {{name}}</p>
     <hr>
     <!-- <p>notification</p>
     <hr> -->
 
     <div class="card" style="overflow: auto; padding: 10px; height: 600px;">
 
-      <p><b>user : </b>hello user </p>
+      <p><b>{{name}} : </b>hello user </p>
 
     </div>
 
@@ -24,5 +24,17 @@
 
   </div>
 
+<script>
+  function copyToClipboard() {
+    text=document.getElementById('room_id').innerHTML
+    navigator.clipboard.writeText(text).then(() =>{
+    document.getElementById('copy_button').innerHTML='coppied'
+    setTimeout(function() {
+            document.getElementById('copy_button').innerHTML = 'copy';
+        }, 1000);
+})
 
+  }
+  
+</script>
 {% endblock %} 

@@ -37,10 +37,12 @@
                 <a class="nav-link disabled" aria-disabled="true">Disabled</a>
               </li>
             </ul> -->
-            <form class="d-flex ms-auto mx-4" role="search">
+            <!-- <form class="d-flex ms-auto mx-4" role="search"> -->
               <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-              <button class="btn btn-outline-success" type="submit">Exit Room</button>
-            </form> 
+              {% if session %}
+              <a href="/existRoom" class="btn btn-outline-success d-flex ms-auto mx-4" type="submit">Exit Room</a>
+              {% endif %}
+            <!-- </form>  -->
           </div>
         </div>
       </nav>
@@ -52,5 +54,14 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf-8">
+        var socket = io();
+        socket.on('connect', function() {
+            socket.emit('my event', {data: 'I\'m connected!'});
+        });
+    </script>
+  
+  
   </body>
 </html>

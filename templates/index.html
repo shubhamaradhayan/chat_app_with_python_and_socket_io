@@ -1,36 +1,41 @@
 {% extends 'base.html' %} {% block data %}
 <div class="container my-4 m-auto text-center">
-    <form class="card my-4 mx-4 text-center" action="/chat">
-        <div class="row g-3 align-items-center my-4 text-center">
-            <div class="col-auto text-center px-auto">
-                <label for="inputPassword6" class="col-form-label">Enter Your Name</label>
-            </div>
-            <div class="col-auto text-center">
-                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-            </div>
-            
-        </div>
-        <br>
-        <div class="row g-3 align-items-center my-4">
-            <button type="submit">Create Room</button>
-        </div>
-        <br>
-        <h5>OR</h5>
-        <br>
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-                <label for="inputPassword6" class="col-form-label">Enter Room Id</label>
-            </div>
-            <div class="col-auto">
-                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" />
-            </div>
-            <div class="col-auto">
-                <button type="submit">Join Room</button>
-                <!-- <span id="passwordHelpInline" class="form-text"> </span> -->
-            </div>
-           
-        </div>
-    </form>
-</div>
+    <div class="card m-auto" style="width: 18rem;">
+        
+        <form class="card-body" action="/" method="post">
+          <h5 class="card-title">Create Or Join Room</h5>
+          <hr>
+          {% if error %}
+          <ul >
+            <li style="color: red; font-weight: bold;" id="errorMsg">{{error}}</li>
+          </ul>
+          {% endif %}
+          <input type="text" placeholder="Enter Your Name" name="name" id="name" value="{{name}}" class="form-control my-4 card-text" style="border: 2px solid gray;" required>
+          <input type="hidden" value="" id="room_id" name="room_id" class="form-control my-4 card-text" style="border: 2px solid gray;">
+          <button class="btn btn-primary" type="submit" name="create" onclick="generateUniqueId()" >Create Room</button>
+          <h5 class="my-2">OR</h5>
+          <input type="text" placeholder="Enter Your Room Id" name="code" class="form-control my-2" style="border: 2px solid gray;">
+          <button type="submit" class="btn btn-primary" name="join" onclick="">Join Room</button>
+        </form>
+      </div>
 
+     
+</div>
+<script>
+
+  function generateUniqueId() {
+    var name = document.getElementById('name').value
+    if (name == '' ){
+      alert("Please Enter Your Name")
+    }else{
+    var timestamp = new Date().getTime(); // Get current timestamp
+    var random = Math.floor(Math.random() * 1000000); // Generate random number
+
+    var uniqueId = 'RoomId_' + timestamp + random; // Combine timestamp and random number
+    document.getElementById('room_id').value = uniqueId
+    // document.getElementById('uniqueId').textContent = uniqueId; // Display the unique ID
+
+    alert('your room id is -> '+ uniqueId)
+}}
+</script>
 {% endblock %}
