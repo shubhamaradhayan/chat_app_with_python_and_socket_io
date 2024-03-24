@@ -11,10 +11,10 @@
           </ul>
           {% endif %}
           <input type="text" placeholder="Enter Your Name" name="name" id="name" value="{{name}}" class="form-control my-4 card-text" style="border: 2px solid gray;" required>
-          <input type="hidden" value="" id="room_id" name="room_id" class="form-control my-4 card-text" style="border: 2px solid gray;">
+          <input type="hidden" value="" id="room_id" name="create_room_id" class="form-control my-4 card-text" style="border: 2px solid gray;">
           <button class="btn btn-primary" type="submit" name="create" onclick="generateUniqueId()" >Create Room</button>
           <h5 class="my-2">OR</h5>
-          <input type="text" placeholder="Enter Your Room Id" name="code" class="form-control my-2" style="border: 2px solid gray;">
+          <input type="text" placeholder="Enter Your Room Id" name="join_code" class="form-control my-2" style="border: 2px solid gray;">
           <button type="submit" class="btn btn-primary" name="join" onclick="">Join Room</button>
         </form>
       </div>
