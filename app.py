@@ -45,6 +45,8 @@ def chat():
 
     if not session:
         return redirect('/')
+    if session.get("room") not in rooms :
+        rooms[session.get("room")] = {'members':0, 'messages':[]}
     return render_template("chat.html", name=session.get("name"), room_id=session.get("room"))
 
 
