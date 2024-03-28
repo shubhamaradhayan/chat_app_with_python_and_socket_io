@@ -1,4 +1,4 @@
-# chat_app_with_python_and_socket_io
+# chat_app_with_python_and_socket_io_with_Flask
 
 This is a chatroom web-application. which is used to do group chat. There is no use of any databases because in This application there is no need to store messages.
 
